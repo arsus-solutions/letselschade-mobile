@@ -70,31 +70,11 @@
           </div>
 
           <div v-show="currentPage === 'advies'" class="max-w-2xl mx-auto">
-            <h2
-              class="text-xl sm:text-2xl font-cinzel text-shield-blue-dark mb-4 text-center"
-            >
-              Persoonlijk Advies
-            </h2>
-            <div class="bg-white rounded-lg shadow-md p-6">
-              <p class="text-shield-gray-dark mb-4">
-                Wilt u persoonlijk advies over uw letselschade? Neem contact met
-                ons op.
-              </p>
-            </div>
+            <Advies />
           </div>
 
           <div v-show="currentPage === 'info'" class="max-w-2xl mx-auto">
-            <h2
-              class="text-xl sm:text-2xl font-cinzel text-shield-blue-dark mb-4 text-center"
-            >
-              Informatie
-            </h2>
-            <div class="bg-white rounded-lg shadow-md p-6">
-              <p class="text-shield-gray-dark mb-4">
-                Hier vindt u belangrijke informatie over letselschade en onze
-                diensten.
-              </p>
-            </div>
+            <Info />
           </div>
         </div>
       </transition>
@@ -120,11 +100,15 @@
 
 <script>
 import LetselschadeForm from "./components/LetselschadeTest/LetselschadeForm.vue";
+import Info from "./components/Pages/Info.vue";
+import Advies from "./components/Pages/Advies.vue";
 
 export default {
   name: "App",
   components: {
     LetselschadeForm,
+    Info,
+    Advies,
   },
   data() {
     return {
