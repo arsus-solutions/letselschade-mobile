@@ -1,0 +1,23 @@
+// Theme Colors
+$shield-blue-light: #8ba3c1 !default;
+$shield-blue: #4a6a94 !default;
+$shield-blue-dark: #2c4a76 !default;
+
+$shield-gray-light: #e5e7eb !default;
+$shield-gray: #9ca3af !default;
+$shield-gray-dark: #4b5563 !default;
+
+// Breakpoints
+$screen-sm: 640px !default;
+$screen-md: 768px !default;
+$screen-lg: 1024px !default;
+$screen-xl: 1280px !default;
+
+:export {
+  shieldBlueLight: $shield-blue-light;
+  shieldBlue: $shield-blue;
+  shieldBlueDark: $shield-blue-dark;
+  shieldGrayLight: $shield-gray-light;
+  shieldGray: $shield-gray;
+  shieldGrayDark: $shield-gray-dark;
+}
