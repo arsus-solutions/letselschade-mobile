@@ -19,6 +19,24 @@ export default defineConfig({
       },
     },
   },
+  // Add base and build configuration
+  base: "/", // Change this if deploying to a subdirectory
+  build: {
+    outDir: "dist",
+    assetsDir: "assets",
+    // Ensure proper module resolution in production
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          vue: ["vue"],
+          vendor: [
+            "vue-router", // include if you're using vue-router
+            // other major dependencies
+          ],
+        },
+      },
+    },
+  },
   server: {
     proxy: {
       "/api": {
