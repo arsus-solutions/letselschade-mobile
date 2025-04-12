@@ -29,10 +29,7 @@ export default defineConfig({
       output: {
         manualChunks: {
           vue: ["vue"],
-          vendor: [
-            "vue-router", // include if you're using vue-router
-            // other major dependencies
-          ],
+          // Add other dependencies only if they're installed in your project
         },
       },
     },
