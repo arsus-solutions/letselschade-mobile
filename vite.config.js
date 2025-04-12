@@ -7,6 +7,7 @@ export default defineConfig({
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),
+      vue: "vue/dist/vue.esm-bundler.js",
     },
   },
   css: {
@@ -24,8 +25,23 @@ export default defineConfig({
   build: {
     outDir: "dist",
     assetsDir: "assets",
+    emptyOutDir: true,
+    sourcemap: false,
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          vendor: ["vue", "vue-router"],
+          fontawesome: [
+            "@fortawesome/fontawesome-svg-core",
+            "@fortawesome/free-solid-svg-icons",
+            "@fortawesome/vue-fontawesome",
+          ],
+        },
+      },
+    },
   },
   server: {
+    port: 3000,
     proxy: {
       "/api": {
         target: "https://extranet.letselschadeclaimen.nl",
