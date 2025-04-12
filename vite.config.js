@@ -20,7 +20,6 @@ export default defineConfig({
       },
     },
   },
-  // This is the critical change - use relative paths
   base: "./",
   build: {
     outDir: "dist",
