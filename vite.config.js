@@ -1,13 +1,12 @@
 import { defineConfig } from "vite";
 import vue from "@vitejs/plugin-vue";
-import { resolve } from "path";
+import path from "path";
 
-// More compatible approach for Node 16
 export default defineConfig({
   plugins: [vue()],
   resolve: {
     alias: {
-      "@": resolve(__dirname, "./src"),
+      "@": path.resolve(__dirname, "./src"),
     },
   },
   css: {
@@ -20,19 +19,11 @@ export default defineConfig({
       },
     },
   },
-  // Simplified build config for better Node 16 compatibility
-  base: "/",
+  // This is the critical change - use relative paths
+  base: "./",
   build: {
     outDir: "dist",
     assetsDir: "assets",
-    // Target older browsers for better compatibility
-    target: "es2015",
-    // Reduce chunk size to avoid optimization issues
-    chunkSizeWarningLimit: 1000,
-    commonjsOptions: {
-      // Improve CommonJS modules handling
-      transformMixedEsModules: true,
-    },
   },
   server: {
     proxy: {
